@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DashlaneTest</string>
+    <string name="web_site_logo_desc">The Website Logo</string>
+    <string name="search_title">Search</string>
+</resources>

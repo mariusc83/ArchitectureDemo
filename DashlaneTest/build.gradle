@@ -1,0 +1,50 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+
+    libraries =
+            [
+                    appcompat   : "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}",
+                    annotations : "com.android.support:support-annotations:${ANDROID_SUPPORT_VERSION}",
+                    recyclerview: "com.android.support:recyclerview-v7:${ANDROID_SUPPORT_VERSION}",
+                    support     : "com.android.support:support-v4:${ANDROID_SUPPORT_VERSION}",
+                    retrofit    : "com.squareup.retrofit:retrofit:${RETROFIT_VERSION}",
+                    picasso     : "com.squareup.picasso:picasso:${PICASSO_VERSION}",
+                    fastscroller: "xyz.danoz:recyclerviewfastscroller:${FAST_SCROLLER_VERSION}",
+                    unit_test   : [
+                            "junit:junit:${JUNIT_VERSION}",
+                            "org.mockito:mockito-core:${MOCKITO_VERSION}",
+                            "com.squareup.okhttp:mockwebserver:${MOCK_WEBSERVER_VERSION}",
+                            "org.robolectric:robolectric:${ROBOLECTRIC_VERSION}"
+                    ],
+                    android_test: [
+                            "com.android.support.test:runner:${TEST_SUPPORT_VERSION}",
+                            "com.android.support.test:rules:${TEST_SUPPORT_VERSION}",
+                            "com.android.support.test.espresso:espresso-core:${ESPRESSO_VERSION}",
+                            "com.android.support.test.espresso:espresso-contrib:${ESPRESSO_VERSION}",
+                            "com.android.support.test.espresso:espresso-intents:${ESPRESSO_VERSION}"
+                    ]
+            ]
+}
